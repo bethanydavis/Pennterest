@@ -44,6 +44,12 @@ gem 'devise', '3.4.1'
 # to attach images to Pins
 gem 'paperclip', '~> 5.0.0.beta1'
 
+# AWS for image storage
+gem 'aws-sdk', '~> 1.6'
+
+# I might want to use bootstrap for styling
+gem 'bootstrap-sass', '~> 3.3.6'
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
