@@ -26,5 +26,6 @@ Deployed to heroku at pennterest.heroku.com
 * devise
 * Paperclip
 * aws
+* dotenv
 * bootstrap
 * has_many/has_many :through relationship
