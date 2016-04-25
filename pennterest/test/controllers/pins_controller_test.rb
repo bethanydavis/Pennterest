@@ -5,18 +5,18 @@ class PinsControllerTest < ActionController::TestCase
     @pin = pins(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get :index
     assert_response :success
     assert_not_nil assigns(:pins)
   end
 
-  test "should get new" do
+  test 'should get new' do
     get :new
     assert_response :success
   end
 
-  test "should create pin" do
+  test 'should create pin' do
     assert_difference('Pin.count') do
       post :create, pin: { caption: @pin.caption, category: @pin.category, source: @pin.source }
     end
@@ -24,22 +24,22 @@ class PinsControllerTest < ActionController::TestCase
     assert_redirected_to pin_path(assigns(:pin))
   end
 
-  test "should show pin" do
+  test 'should show pin' do
     get :show, id: @pin
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get :edit, id: @pin
     assert_response :success
   end
 
-  test "should update pin" do
+  test 'should update pin' do
     patch :update, id: @pin, pin: { caption: @pin.caption, category: @pin.category, source: @pin.source }
     assert_redirected_to pin_path(assigns(:pin))
   end
 
-  test "should destroy pin" do
+  test 'should destroy pin' do
     assert_difference('Pin.count', -1) do
       delete :destroy, id: @pin
     end
