@@ -1,16 +1,30 @@
-== README
-Signing up, logging in/out, making boards, and pinning to those boards should all be the basic features. I think being able to display pins based on different categories would be a good additional feature to make this project of appropriate scope
-Features:
+= README
+
+RoR representation of Pinterest
+Deployed to heroku at pennterest.heroku.com
+
+---
+
+===Features:
 * Signing up
 * Logging in/out
 * Making boards
 * Pinning to boards
 * Displaying pins based on different categories
 
-Deployed to heroku at pennterest.heroku.com
+---
 
-Models:
+===Models:
 * User: Name, About Me, and many Boards
 * Board: Title, many Pins, belongs to a User
 * Pin: Caption, Category, Source, and many Boards
 * BoardsPin: (joining model for Boards and Pins)
+
+---
+
+===Gems + technologies used:
+* devise
+* Paperclip
+* aws
+* bootstrap
+* has_many/has_many :through relationship
