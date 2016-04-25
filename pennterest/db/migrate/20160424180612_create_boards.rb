@@ -1,3 +1,4 @@
+# migration to create boards
 class CreateBoards < ActiveRecord::Migration
   def change
     create_table :boards do |t|

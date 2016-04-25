@@ -1,3 +1,4 @@
+# migration to create pins
 class CreatePins < ActiveRecord::Migration
   def change
     create_table :pins do |t|
