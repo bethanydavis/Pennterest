@@ -2,27 +2,15 @@
 
 <h1>Click on a user to see their profile:</h1>
 
-<table>
-<!--   <thead>
-    <tr>
-      <th>Name</th>
-      <th>About me</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead> -->
-
-  <tbody>
+  <ul>
     <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to user.name, user %></td>
+      <li><%= link_to user.name, user %></li>
         <!-- <td><%= user.about_me %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-      </tr>
     <% end %>
-  </tbody>
-</table>
+</ul>
 <!-- 
 <br>
 
