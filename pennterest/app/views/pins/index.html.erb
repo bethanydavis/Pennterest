@@ -1,8 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Pins</h1>
+<h1 class="text-center">PENNterest</h1>
 
-<table>
+<div class="row">
+  <% @pins.each do |pin| %>
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="http://www.petserviceslasvegasnv.info/wp-content/uploads/2011/06/dogs-grooming-300x300.jpg" alt="a picture of a dog" width="150" height="150">
+      <div class="caption">
+        <h4><%= pin.caption %></h4>
+        <p><%= link_to 'View Pin', pin %></p>
+        <p>#<%= pin.category %></p>
+        <!-- <p><%= link_to 'Edit', edit_pin_path(pin) %></p> -->
+        <!-- <p><%= link_to 'Delete Pin', pin, method: :delete, data: { confirm: 'Are you sure?' } %></p> -->
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<!-- <table>
   <thead>
     <tr>
       <th>Caption</th>
@@ -24,8 +41,8 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
 
 <br>
 
-<%= link_to 'New Pin', new_pin_path %>
+<!--<%= link_to 'New Pin', new_pin_path %>-->

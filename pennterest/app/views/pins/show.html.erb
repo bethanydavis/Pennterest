@@ -1,19 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Caption:</strong>
-  <%= @pin.caption %>
-</p>
+<!-- <div class="container center-block single-pin">
+			<div class="col-sm-6 col-md-4">
+	<div class="thumbnail"> -->
+	<div class=" container center-block">
+      <img src="http://www.petserviceslasvegasnv.info/wp-content/uploads/2011/06/dogs-grooming-300x300.jpg" alt="a picture of a dog" width="150" height="150">
+        <h4><%= @pin.caption %></h4>
+        <p>#<%= @pin.category %></p>
+        <!-- PIN SOURCE -->
+        <!-- <p><%= link_to 'Edit', edit_pin_path(@pin) %></p> -->
+        <!-- <p><%= link_to 'Delete Pin', @pin, method: :delete, data: { confirm: 'Are you sure?' } %></p> -->
 
-<p>
-  <strong>Category:</strong>
-  <%= @pin.category %>
-</p>
+        <p>
+		  <ul>Appears on:
+			  <% @pin.boards.each do |board| %>
+			      <li><a href="/boards/<%= board.id %>"><%= board.title %></a></li>
+			  <% end %>
+		  </ul>
+		</p>
 
-<p>
-  <strong>Source:</strong>
-  <%= @pin.source %>
-</p>
-
-<%= link_to 'Edit', edit_pin_path(@pin) %> |
-<%= link_to 'Back', pins_path %>
+		<%= link_to 'Back', pins_path %>
+	</div>
+<!-- 	</div>
+	</div>
+</div> -->
