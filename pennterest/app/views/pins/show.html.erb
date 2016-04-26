@@ -4,7 +4,7 @@
 			<div class="col-sm-6 col-md-4">
 	<div class="thumbnail"> -->
 	<div class=" container center-block">
-      <img src="http://www.petserviceslasvegasnv.info/wp-content/uploads/2011/06/dogs-grooming-300x300.jpg" alt="a picture of a dog" width="150" height="150">
+<div class="jumbotron text-center">      <img src="http://www.petserviceslasvegasnv.info/wp-content/uploads/2011/06/dogs-grooming-300x300.jpg" alt="a picture of a dog" width="150" height="150">
         <h4><%= @pin.caption %></h4>
         <p>#<%= @pin.category %></p>
         <!-- PIN SOURCE -->
@@ -12,14 +12,14 @@
         <!-- <p><%= link_to 'Delete Pin', @pin, method: :delete, data: { confirm: 'Are you sure?' } %></p> -->
 
         <p>
-		  <ul>Appears on:
+		  <ul class="list-unstyled">Appears on:
 			  <% @pin.boards.each do |board| %>
 			      <li><a href="/boards/<%= board.id %>"><%= board.title %></a></li>
 			  <% end %>
 		  </ul>
 		</p>
 
-		<%= link_to 'Back', pins_path %>
+		<%= link_to 'Back', pins_path %></div>
 	</div>
 <!-- 	</div>
 	</div>

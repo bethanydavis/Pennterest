@@ -1,33 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<h3 class="text-center">
   <%= @board.title %>
-</p>
+</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>Caption</th>
-      <th>Category</th>
-      <th>Source</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @board.pins.each do |pin| %>
-      <tr>
-        <td><%= pin.caption %></td>
-        <td><%= pin.category %></td>
-        <td><%= pin.source %></td>
-        <td><%= link_to 'Show', pin %></td>
-        <td><%= link_to 'Edit', edit_pin_path(pin) %></td>
-        <td><%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+  <% @board.pins.each do |pin| %>
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="http://www.petserviceslasvegasnv.info/wp-content/uploads/2011/06/dogs-grooming-300x300.jpg" alt="a picture of a dog" width="150" height="150">
+      <div class="caption">
+        <h4><%= pin.caption %></h4>
+        <p><%= link_to 'View Pin', pin %></p>
+        <p>#<%= pin.category %></p>
+        <!-- <p><%= link_to 'Edit', edit_pin_path(pin) %></p> -->
+        <!-- <p><%= link_to 'Delete Pin', pin, method: :delete, data: { confirm: 'Are you sure?' } %></p> -->
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
 
 <%= link_to 'Edit', edit_board_path(@board) %> |
 <%= link_to 'Back', boards_path %>

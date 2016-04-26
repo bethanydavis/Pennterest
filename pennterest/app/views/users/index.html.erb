@@ -2,9 +2,9 @@
 
 <div class="container"><h3>Click on a user to see their profile:</h3>
 
-  <ul>
+  <ul class="list-group">
     <% @users.each do |user| %>
-      <li><%= link_to user.name, user %></li>
+      <li class="list-group-item list-group-item-danger"><%= link_to user.name, user %></li>
         <!-- <td><%= user.about_me %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
