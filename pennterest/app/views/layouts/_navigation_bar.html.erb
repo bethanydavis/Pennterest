@@ -26,10 +26,13 @@
         <button type="submit" class="btn btn-default" name="commit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-      	<li><a href="/users/sign_up" alt="Sign up"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a></li>
-      	<li><a href="/users/sign_in" alt="Log in"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span></a></li>
-        <li><a rel="nofollow" data-method="delete" href="/users/sign_out"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
-        <li><a href="#" alt="My profile"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+        <% if user_signed_in? %>
+          <li><a rel="nofollow" data-method="delete" href="/users/sign_out"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+          <li><a href="/users/<%= current_user.id %>" alt="My profile"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+        <% else %>
+          <li><a href="/users/sign_up" alt="Sign up"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a></li>
+          <li><a href="/users/sign_in" alt="Log in"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span></a></li>
+        <% end %>
         <li><a href="/users" alt="All profiles"><span class="glyphicon glyphicon-list" aria-hidden="true"></span></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
