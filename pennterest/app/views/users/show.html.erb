@@ -1,8 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-  <h1><%= @user.name %>
+  <h1 class="text-center"><%= @user.name %><br>
   <small><%= @user.about_me %></small>
   </h1>
+
+  <div class="text-center">
+  	<% if current_user.id == @user.id %>
+  	 <%= link_to 'Edit my profile', edit_user_path(@user) %> | 
+ 	 <% end %>
+  	<%= link_to 'Back', users_path %>
+  </div>
 
   <ul>Boards:
 			  <% @user.boards.each do |board| %>
@@ -10,4 +17,3 @@
 			  <% end %>
 		  </ul>
 
-<%= link_to 'Back', users_path %>
