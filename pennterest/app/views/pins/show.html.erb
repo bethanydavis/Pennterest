@@ -2,10 +2,9 @@
 
 	<div class=" container center-block">
 <div class="jumbotron text-center">
-		<a href="http://www.<%= @pin.source %>" target="_blank"><%= image_tag @pin.image.url(:medium) %></a>
+		<a href="<%= @pin.source %>" target="_blank"><%= image_tag @pin.image.url(:medium) %></a>
         <h4><%= @pin.caption %></h4>
         <p>#<%= @pin.category %></p>
-        <!-- PIN SOURCE -->
         <!-- <p><%= link_to 'Edit', edit_pin_path(@pin) %></p> -->
 <!--         <p><%= link_to 'Delete Pin', @pin, method: :delete, data: { confirm: 'Are you sure?' } %></p>  -->
 

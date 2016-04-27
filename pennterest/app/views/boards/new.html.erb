@@ -1,6 +1,8 @@
-<div class="container"><h3>Create a Board</h3>
+<div class="container-fluid"><h3>Start a new board</h3><br>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', boards_path %>
+<% if user_signed_in? %>
+  <%= render 'form' %>
+<% else %>
+  <h3 class="text-center lead text-danger">You must be logged in to start a new board.</h3>
+<% end %>
 </div>

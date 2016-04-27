@@ -1,6 +1,9 @@
 <div class="container"><h3>Add a new pin</h3>
 
-<%= render 'form' %>
+<% if user_signed_in? %>
+  <%= render 'form' %>
+<% else %>
+  <h3 class="text-center lead text-danger">You must be logged in to pin something.</h3>
+<% end %>
 
-<%= link_to 'Back', pins_path %>
 </div>

@@ -53,6 +53,9 @@ gem 'aws-sdk', '~> 1.6'
 # I might want to use bootstrap for styling
 gem 'bootstrap-sass', '~> 3.3.6'
 
+# Used to validate Pin source URLs
+gem 'validate_url'
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
