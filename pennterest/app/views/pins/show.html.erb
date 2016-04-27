@@ -4,12 +4,13 @@
 			<div class="col-sm-6 col-md-4">
 	<div class="thumbnail"> -->
 	<div class=" container center-block">
-<div class="jumbotron text-center">      <img src="http://www.petserviceslasvegasnv.info/wp-content/uploads/2011/06/dogs-grooming-300x300.jpg" alt="a picture of a dog" width="150" height="150">
+<div class="jumbotron text-center">
+		<a href="http://www.<%= @pin.source %>" target="_blank"><%= image_tag @pin.image.url(:medium) %></a>
         <h4><%= @pin.caption %></h4>
         <p>#<%= @pin.category %></p>
         <!-- PIN SOURCE -->
         <!-- <p><%= link_to 'Edit', edit_pin_path(@pin) %></p> -->
-        <!-- <p><%= link_to 'Delete Pin', @pin, method: :delete, data: { confirm: 'Are you sure?' } %></p> -->
+<!--         <p><%= link_to 'Delete Pin', @pin, method: :delete, data: { confirm: 'Are you sure?' } %></p>  -->
 
         <p>
 		  <ul class="list-unstyled">Appears on:
