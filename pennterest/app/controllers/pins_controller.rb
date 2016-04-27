@@ -5,7 +5,10 @@ class PinsController < ApplicationController
   # GET /pins
   # GET /pins.json
   def index
-    @pins = Pin.all
+    @pins = Pin.all.order('created_at DESC')
+    if params[:search]
+      @pins = Pin.search_by_category(params[:search])
+    end
   end
 
   # GET /pins/1

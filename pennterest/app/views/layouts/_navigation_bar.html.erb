@@ -17,11 +17,12 @@
       	<li><a href="/" alt="Home"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
         <li><a href="/pins/new" alt="New pin"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
+
+      <form id="search-form" action="/pins" accept-charset="UTF-8" method="get" class="navbar-form navbar-left" role="search"><input name="utf8" type="hidden" value="&#x2713;" />
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search by category">
+          <input type="text" class="form-control" name="search" id="search" placeholder="Search by category">
         </div>
-        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+        <button type="submit" class="btn btn-default" name="commit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
       </form>
       <ul class="nav navbar-nav navbar-right">
       	<li><a href="/users/sign_up" alt="Sign up"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a></li>
