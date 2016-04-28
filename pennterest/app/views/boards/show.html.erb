@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h3 class="text-center">
-  <%= @board.title %>
+  <%= @board.title %><br>
+  <small>by <a href="/users/<%= @board.user.id %>"><%= @board.user.name %></a><br>
+  <% if user_signed_in? && current_user.id == @board.user.id %>
+  <%= link_to 'Edit board', edit_board_path(@board) %>
+<% end %></small>
 </h3>
 
 <div class="row">
@@ -20,7 +24,3 @@
   </div>
   <% end %>
 </div>
-
-<% if user_signed_in? && current_user.id == @board.user.id %>
-  <%= link_to 'Edit', edit_board_path(@board) %>
-<% end %>
