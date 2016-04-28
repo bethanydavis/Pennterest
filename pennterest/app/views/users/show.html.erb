@@ -11,9 +11,10 @@
   	<%= link_to 'Back', users_path %>
   </div>
 
-  <ul>Boards:
-			  <% @user.boards.each do |board| %>
-			      <li><a href="/boards/<%= board.id %>"><%= board.title %></a></li>
-			  <% end %>
-		  </ul>
+<div class="container"> <h2><%= @user.name %>'s Boards:</h2>
+  <ul class="list-unstyled">
+        <% @user.boards.each do |board| %>
+            <li class="lead"><a href="/boards/<%= board.id %>"><%= board.title %></a></li>
+        <% end %>
+      </ul></div>
 

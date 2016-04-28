@@ -21,5 +21,6 @@
   <% end %>
 </div>
 
-<%= link_to 'Edit', edit_board_path(@board) %> |
-<%= link_to 'Back', boards_path %>
+<% if current_user.id == @board.user.id %>
+  <%= link_to 'Edit', edit_board_path(@board) %>
+<% end %>
