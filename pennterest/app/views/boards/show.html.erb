@@ -21,6 +21,6 @@
   <% end %>
 </div>
 
-<% if current_user.id == @board.user.id %>
+<% if user_signed_in? && current_user.id == @board.user.id %>
   <%= link_to 'Edit', edit_board_path(@board) %>
 <% end %>
