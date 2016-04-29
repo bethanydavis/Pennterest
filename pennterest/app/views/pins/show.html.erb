@@ -33,8 +33,9 @@
 		    </div>
 		  <% end %>
 	    <div class="field">
+	    	<%= f.label :repin %><br>
 		    <%= f.select :board_ids, current_user.boards.collect {|board| [board.title, board.id]}, {}, :multiple => true %>
-		  </div><br>
+		</div><br>
 
 		  <div class="actions">
 		    <%= f.submit %>
