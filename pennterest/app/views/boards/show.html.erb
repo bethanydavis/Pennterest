@@ -12,10 +12,9 @@
   <% @board.pins.each do |pin| %>
   <div class="col-sm-6 col-md-3">
     <div class="thumbnail">
-      <%= image_tag pin.image.url(:medium) %>
+      <a href="/pins/<%= pin.id %>"><%= image_tag pin.image.url(:medium) %></a>
       <div class="caption">
         <h4><%= pin.caption %></h4>
-        <p><%= link_to 'View Pin', pin %></p>
         <p>#<%= pin.category %></p>
         <!-- <p><%= link_to 'Edit', edit_pin_path(pin) %></p> -->
         <!-- <p><%= link_to 'Delete Pin', pin, method: :delete, data: { confirm: 'Are you sure?' } %></p> -->

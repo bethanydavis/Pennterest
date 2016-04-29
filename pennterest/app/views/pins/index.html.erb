@@ -4,7 +4,7 @@
   <% @pins.each do |pin| %>
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-      <a href="/pins/<%= pin.id %>"><%= image_tag pin.image.url(:medium) %></a
+      <a href="/pins/<%= pin.id %>"><%= image_tag pin.image.url(:medium) %></a>
       <div class="caption">
         <h4><%= pin.caption %></h4>
         <p>#<%= pin.category %></p>
