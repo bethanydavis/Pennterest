@@ -28,7 +28,7 @@
     <%= f.text_field :source %>
   </div><br>
   <div class="field">
-    <%= f.select :board_ids, current_user.boards.collect {|x| [x.title, x.id]}, {}, :multiple => true %>
+    <%= f.select :board_ids, current_user.boards.collect {|board| [board.title, board.id]}, {}, :multiple => true %>
   </div><br>
 
   <div class="actions">

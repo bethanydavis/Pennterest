@@ -82,6 +82,8 @@ class PinsController < ApplicationController
   # Never trust parameters from the scary internet,
   # only allow the white list through.
   def pin_params
-    params.require(:pin).permit(:caption, :category, :source, :image, board_ids: [])
+    pinparams = params.require(:pin).permit(:caption, :category, :source, :image, board_ids: [])
+    pinparams.merge! ({board_ids: params[:board_ids]}) if params[:board_ids].present?
+    pinparams
   end
 end
