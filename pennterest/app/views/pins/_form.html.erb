@@ -17,7 +17,7 @@
   </div><br>
   <div class="field">
     <%= f.label :caption %><br>
-    <%= f.text_field :caption %>
+    <%= f.text_field :caption, required: true %>
   </div><br>
   <div class="field">
     <%= f.label :category %><br>
@@ -25,10 +25,10 @@
   </div><br>
   <div class="field">
     <%= f.label :source %><br>
-    <%= f.text_field :source %>
+    <%= f.text_field :source, required: true %>
   </div><br>
   <div class="field">
-    <%= f.select :board_ids, current_user.boards.collect {|board| [board.title, board.id]}, {}, :multiple => true %>
+    <%= f.select :board_ids, current_user.boards.collect {|board| [board.title, board.id]}, {}, multiple: true, required: true %>
   </div><br>
 
   <div class="actions">
