@@ -1,5 +1,6 @@
+# add image to pins
 class AddImageToPins < ActiveRecord::Migration
- def self.up
+  def self.up
     add_attachment :pins, :image
   end
 

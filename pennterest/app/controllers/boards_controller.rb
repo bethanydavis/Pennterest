@@ -30,15 +30,17 @@ class BoardsController < ApplicationController
 
     respond_to do |format|
       if @board.save
-        format.html {
+        format.html do
           redirect_to current_user, notice:
           'Board was successfully created.'
-        }
+        end
         format.json { render :show, status: :created, location: @board }
       else
         format.html { render :new }
-        format.json { render json: @board.errors,
-          status: :unprocessable_entity }
+        format.json do
+          render json: @board.errors,
+                 status: :unprocessable_entity
+        end
       end
     end
   end
@@ -48,15 +50,17 @@ class BoardsController < ApplicationController
   def update
     respond_to do |format|
       if @board.update(board_params)
-        format.html {
+        format.html do
           redirect_to @board, notice:
           'Board was successfully updated.'
-        }
+        end
         format.json { render :show, status: :ok, location: @board }
       else
         format.html { render :edit }
-        format.json { render json: @board.errors,
-          status: :unprocessable_entity }
+        format.json do
+          render json: @board.errors,
+                 status: :unprocessable_entity
+        end
       end
     end
   end
@@ -66,10 +70,10 @@ class BoardsController < ApplicationController
   def destroy
     @board.destroy
     respond_to do |format|
-      format.html {
+      format.html do
         redirect_to boards_url, notice:
         'Board was successfully destroyed.'
-      }
+      end
       format.json { head :no_content }
     end
   end

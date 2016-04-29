@@ -6,9 +6,7 @@ class PinsController < ApplicationController
   # GET /pins.json
   def index
     @pins = Pin.all.order('created_at DESC')
-    if params[:search]
-      @pins = Pin.search_by_category(params[:search])
-    end
+    @pins = Pin.search_by_category(params[:search]) if params[:search]
   end
 
   # GET /pins/1
@@ -32,9 +30,10 @@ class PinsController < ApplicationController
 
     respond_to do |format|
       if @pin.save
-        format.html { redirect_to @pin, notice:
+        format.html do
+          redirect_to @pin, notice:
           'Pin was successfully created.'
-        }
+        end
         format.json { render :show, status: :created, location: @pin }
       else
         format.html { render :new }
@@ -51,13 +50,14 @@ class PinsController < ApplicationController
       @pin.boards << Board.find(board_to_add)
       # if @pin.update(pin_params)
 
-        format.html { redirect_to @pin, notice:
-          'Pin was successfully updated.'
-        }
-        format.json { render :show, status: :ok, location: @pin }
+      format.html do
+        redirect_to @pin, notice:
+        'Pin was successfully updated.'
+      end
+      format.json { render :show, status: :ok, location: @pin }
       # else
       #   format.html { render :edit }
-      #   format.json { render json: @pin.errors, status: :unprocessable_entity }
+      # format.json { render json: @pin.errors, status: :unprocessable_entity }
       # end
     end
   end
@@ -67,10 +67,10 @@ class PinsController < ApplicationController
   def destroy
     @pin.destroy
     respond_to do |format|
-      format.html {
+      format.html do
         redirect_to pins_url, notice:
         'Pin was successfully destroyed.'
-      }
+      end
       format.json { head :no_content }
     end
   end

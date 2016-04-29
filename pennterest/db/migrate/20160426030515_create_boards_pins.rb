@@ -1,3 +1,4 @@
+# create board pins
 class CreateBoardsPins < ActiveRecord::Migration
   def change
     create_table :boards_pins do |t|
